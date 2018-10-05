@@ -273,21 +273,7 @@ void * serverRun(void *){
 int main(int argc, char *argv[]) {
     server = new SocketServer;
     serverRun(NULL);
-
-    /*
-    pthread_t hiloServer;
-    pthread_create(&hiloServer,0,serverRun,NULL);
-    pthread_detach(hiloServer);
-    */
-
-    /*
-    while(1){
-        string mensaje;
-        cin>> mensaje;
-        server->setMensaje(mensaje.c_str());
-    }
-    */
-
+    
     delete server;
     return 0;
 }
