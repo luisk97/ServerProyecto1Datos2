@@ -167,13 +167,15 @@ public:
             cout<<endl;
             cout<<endl;
         }else if(instruccion == "liberarEspacio"){
-            string strId = json["id"].asString();
-            int numId = atoi(strId.c_str());//con esta variable buscamos el espacio a liberar
-
+            string strIdElim = json["idElim"].asString();
+            int numIdElim = atoi(strIdElim.c_str());//con esta variable buscamos el espacio a liberar
 
             //Aqui se debe llamar a las funcion que recibe como parametro el id
-            //busca el campo mediante el id (numId) y disminuye en uno las referencias
+            //busca el campo mediante el id (numIdElim) y disminuye en uno las referencias
             //hacia esta y si las referencias es igual a cero libera ese espacio
+
+            string strIdAum = json["idElim"].asString();
+            int numIdAum = atoi(strIdAum.c_str());//y con esta aumentamos las referencias a este id
 
             string text;
             //verificamos y si la accion se realizo correctamente respondemos
