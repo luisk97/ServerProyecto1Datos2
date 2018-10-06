@@ -187,6 +187,24 @@ public:
 
             cout<<endl;
             cout<<endl;
+        }else if(instruccion == "liberarMemoria"){
+
+            //Aqui es donde se debe llamar a la funcion que hace el malloc y
+            //lo hacemos del tamaño de numTam
+
+            string text;
+            //verificamos y si se pudo recerbar la memoria respondemos
+            text = "Exito";
+            //Y si no respondemos
+            text = "Error";
+
+            cout <<"Respondiendo con el mensaje: "<< text << endl;
+
+            setMensaje(text.c_str());
+
+            cout<<endl;
+            cout<<endl;
+
         }
     }
 
@@ -273,7 +291,22 @@ void * serverRun(void *){
 int main(int argc, char *argv[]) {
     server = new SocketServer;
     serverRun(NULL);
-    
+
+    /*
+    pthread_t hiloServer;
+    pthread_create(&hiloServer,0,serverRun,NULL);
+    pthread_detach(hiloServer);
+    */
+
+    /*
+    while(1){
+        string mensaje;
+        cin>> mensaje;
+        server->setMensaje(mensaje.c_str());
+    }
+    */
+
     delete server;
+
     return 0;
 }
